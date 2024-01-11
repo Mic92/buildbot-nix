@@ -110,8 +110,7 @@ class BuildTrigger(Trigger):
         self.config = None
         self.builds_scheduler = builds_scheduler
         self.skipped_builds_scheduler = skipped_builds_scheduler
-        Trigger.__init__(
-            self,
+        super().__init__(
             waitForFinish=True,
             schedulerNames=[builds_scheduler, skipped_builds_scheduler],
             haltOnFailure=True,
